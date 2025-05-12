@@ -19,14 +19,14 @@ const StatCard: React.FC<StatCardProps> = ({
   className,
 }) => {
   return (
-    <Card className={cn("h-full", className)}>
+    <Card className={cn("h-full border border-accent neon-border", className)}>
       <CardContent className="p-6">
-        <h3 className="text-sm font-medium text-muted-foreground mb-1">{title}</h3>
-        <p className="text-2xl font-bold">{value}</p>
+        <h3 className="text-sm font-medium text-muted-foreground mb-1 uppercase">{title}</h3>
+        <p className="text-2xl font-bold text-glow">{value}</p>
         {change && (
           <p className={cn(
-            "text-sm mt-2", 
-            isPositive ? "text-income" : "text-expense"
+            "text-sm mt-2 font-bold", 
+            isPositive ? "text-income text-glow" : "text-expense text-glow"
           )}>
             {isPositive ? "+" : "-"}{change} vs. last month
           </p>
