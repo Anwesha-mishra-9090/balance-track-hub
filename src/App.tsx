@@ -9,6 +9,7 @@ import Transactions from "./pages/Transactions";
 import Categories from "./pages/Categories";
 import Reports from "./pages/Reports";
 import NotFound from "./pages/NotFound";
+import AppShell from "./components/layout/AppShell";
 
 const queryClient = new QueryClient();
 
@@ -19,10 +20,10 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/transactions" element={<Transactions />} />
-          <Route path="/categories" element={<Categories />} />
-          <Route path="/reports" element={<Reports />} />
+          <Route path="/" element={<AppShell><Index /></AppShell>} />
+          <Route path="/transactions" element={<AppShell><Transactions /></AppShell>} />
+          <Route path="/categories" element={<AppShell><Categories /></AppShell>} />
+          <Route path="/reports" element={<AppShell><Reports /></AppShell>} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
